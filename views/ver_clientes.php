@@ -8,6 +8,7 @@
             </tr>
         </thead>
         <?php
+        if(!is_null($data)){
             for ($j=0; $j < count($data); $j++) { 
                 echo "<tr>";
                 echo "<td>".$data[$j]['id']."</td>";
@@ -16,6 +17,8 @@
                 echo "<td>".$data[$j]['telefono']."</td>";
                 echo "</tr>";
             }
+        }
+            
         ?>
     </table>
 

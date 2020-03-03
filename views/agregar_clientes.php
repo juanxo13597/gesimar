@@ -1,6 +1,6 @@
 <center>
     <div class="col-5">
-
+        <?=$mensaje?>
         <form action="" method="post">
             <div class="form-group">
                 <input type="text" name="dni" class="form-control" placeholder="DNI">
@@ -16,6 +16,9 @@
             </div>
             <div class="form-group">
                 <input type="text" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="text" name="perfil_wimax" class="form-control" placeholder="Perfil Wimax">
             </div>
             <div class="form-group">
                 <button type="submit" name="guardar" class="btn btn-outline-primary">Guardar</button>

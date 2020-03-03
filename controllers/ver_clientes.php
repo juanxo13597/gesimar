@@ -15,6 +15,8 @@ if($result->num_rows>0){
 
         $j++;
     }
+}else{
+    $data = null;
 }
 
 

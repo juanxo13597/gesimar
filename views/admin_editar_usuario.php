@@ -21,7 +21,7 @@
                </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-primary">Crear</button>
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
             </div>
 
         </form>

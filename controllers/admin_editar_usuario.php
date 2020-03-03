@@ -13,7 +13,7 @@ if(isset($_POST['username'])){
     $user->role = $_POST['role'];
 
     $result = $user->update_user($id);
-    echo "<meta http-equiv='refresh' content='3; url=?pag=admin_ver_usuarios'>";
+    echo "<meta http-equiv='refresh' content='1; url=?pag=admin_ver_usuarios'>";
 }
 
 

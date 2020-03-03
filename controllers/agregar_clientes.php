@@ -4,7 +4,9 @@ require_once("models/clientes.php");
 $cliente = new cliente;
 $mensaje = null;
 if(!empty($_POST['nombre'])){
-    $cliente->dni = $_POST['dni'];
+    if($_POST['dni'] != '' || $_POST['dni'] != ""){
+        $cliente->dni = $_POST['dni'];
+    }
     $cliente->nombre = $_POST['nombre'];
     $cliente->direccion = $_POST['direccion'];
     $cliente->telefono = $_POST['telefono'];
@@ -12,6 +14,7 @@ if(!empty($_POST['nombre'])){
     $cliente->perfil_wimax = $_POST['perfil_wimax'];
 
     $mensaje = $cliente->registrar();
+    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_clientes'>";
 }
 
 

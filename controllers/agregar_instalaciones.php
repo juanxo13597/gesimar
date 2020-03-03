@@ -9,6 +9,7 @@ if(isset($_POST['guardar'])){
     $instalacion->activa = $_POST['activa'];
 
     $mensaje = $instalacion->registrar();
+    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_instalaciones'>";
 }
 
 

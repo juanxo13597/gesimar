@@ -24,7 +24,6 @@ CREATE TABLE clientes(
     T_actualizado   datetime default null,
 
     constraint pk_clientes primary key(id),
-    unique(dni),
     unique(nombre)
 
 )ENGINE=INNODB;
@@ -38,6 +37,6 @@ CREATE TABLE instalaciones(
     T_actualizado   datetime default null,
 
     constraint pk_instalaciones primary key(id),
-    constraint fk_instalaciones_cliente foreign key (cliente) references clientes(id)
+    constraint fk_instalaciones_cliente foreign key (cliente) references clientes(id) on delete cascade
 
 )ENGINE=INNODB;

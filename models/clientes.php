@@ -3,7 +3,7 @@ require_once("db.php");
 
 class cliente extends database{
 
-    public $dni = null, $nombre, $direccion, $telefono, $email, $perfil_wimax, $T_creacion, $T_actualizado;
+    public $dni = null, $nombre, $direccion, $telefono, $email, $cuenta_bancaria, $perfil_wimax, $T_creacion, $T_actualizado;
 
     public function ver(){
         $sql = "select * from clientes";

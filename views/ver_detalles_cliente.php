@@ -38,6 +38,12 @@
                     placeholder="..." disabled>
             </div>
 
+            <div class="form-group">
+                <label for="">Cuenta Bancaria</label>
+                <input class="form-control text-center" value="<?=$datos['cuenta_bancaria']?>" name="cuenta_bancaria" id="cuenta_bancaria"
+                    placeholder="..." disabled>
+            </div>
+
 
 
             <button type="submit" class="btn btn-primary" id="guardar" name="guardar" hidden>Guardar</button>
@@ -67,6 +73,7 @@ $(document).ready(function () {
         $("#telefono").removeAttr("disabled");
         $("#email").removeAttr("disabled");
         $("#perfil_wimax").removeAttr("disabled");
+        $("#cuenta_bancaria").removeAttr("disabled");
 
         
         $("#guardar").removeAttr("hidden");

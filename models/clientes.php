@@ -17,6 +17,12 @@ class cliente extends database{
         return $result;
     }
 
+    public function buscar_por_nombre($nombre){
+        $sql = "select * from clientes where nombre='$nombre'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function registrar(){
         if(!is_null($this->nombre) && !is_null($this->telefono && !is_null($this->direccion))){
             $this->T_creacion = date('Y-m-d H:i:s');

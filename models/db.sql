@@ -34,6 +34,8 @@ CREATE TABLE instalaciones(
     cliente         int(11) not null,
     cuota           int(255),
     activa          int(255) default 1,
+    T_creacion      datetime not null,
+    T_actualizado   datetime default null,
 
     constraint pk_instalaciones primary key(id),
     constraint fk_instalaciones_cliente foreign key (cliente) references clientes(id)

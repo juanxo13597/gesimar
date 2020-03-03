@@ -16,6 +16,15 @@
                     <a class="dropdown-item" href="?pag=agregar_clientes">Agregar</a>
                 </div>
             </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Instalaciones</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="?pag=ver_instalaciones">Ver</a>
+                    <a class="dropdown-item" href="?pag=agregar_instalaciones">Agregar</a>
+                </div>
+            </li>
+
         </ul>
         <?=$menuadmin?>
         <ul class="navbar-nav ml-aut mt-2 mt-lg-0">

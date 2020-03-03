@@ -10,6 +10,7 @@
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/typehead.js"></script>
 </head>
 <body>
     <div class="container">

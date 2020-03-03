@@ -28,3 +28,14 @@ CREATE TABLE clientes(
     unique(nombre)
 
 )ENGINE=INNODB;
+
+CREATE TABLE instalaciones(
+    id              int(11) auto_increment,
+    cliente         int(11) not null,
+    cuota           int(255),
+    activa          int(255) default 1,
+
+    constraint pk_instalaciones primary key(id),
+    constraint fk_instalaciones_cliente foreign key (cliente) references clientes(id)
+
+)ENGINE=INNODB;

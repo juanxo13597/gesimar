@@ -19,6 +19,7 @@ CREATE TABLE clientes(
     direccion       varchar(255) default null,
     telefono        varchar(255) default null,
     email           varchar(255) default null,
+    perfil_wimax    varchar(255) default null,
     T_creacion      datetime not null,
     T_actualizado   datetime default null,
 

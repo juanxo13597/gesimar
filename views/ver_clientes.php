@@ -2,22 +2,18 @@
         <thead>
             <tr>
                 <th>id</th>
-                <th>dni</th>
                 <th>Nombre</th>
                 <th>Direccion</th>
                 <th>Telefono</th>
-                <th>Email</th>
             </tr>
         </thead>
         <?php
             for ($j=0; $j < count($data); $j++) { 
                 echo "<tr>";
                 echo "<td>".$data[$j]['id']."</td>";
-                echo "<td>".$data[$j]['dni']."</td>";
-                echo "<td>".$data[$j]['nombre']."</td>";
+                echo "<td><a href='?pag=ver_detalles_cliente&&id=".$data[$j]['id']."'>".$data[$j]['nombre']."</a></td>";
                 echo "<td>".$data[$j]['direccion']."</td>";
                 echo "<td>".$data[$j]['telefono']."</td>";
-                echo "<td>".$data[$j]['email']."</td>";
                 echo "</tr>";
             }
         ?>

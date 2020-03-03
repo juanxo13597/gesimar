@@ -1,0 +1,28 @@
+<center>
+    <div class="col-5">
+
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="text" name="dni" class="form-control" placeholder="DNI">
+            </div>
+            <div class="form-group">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="direccion" class="form-control" placeholder="Direccion" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="telefono" class="form-control" placeholder="Telefono" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <button type="submit" name="guardar" class="btn btn-outline-primary">Guardar</button>
+                <button type="reset" class="btn btn-outline-danger">Limpiar</button>
+            </div>
+        </form>
+
+
+    </div>
+</center>

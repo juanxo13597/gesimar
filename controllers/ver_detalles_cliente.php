@@ -24,7 +24,7 @@ if(isset($_POST['guardar'])){
     $cliente->perfil_wimax = $_POST['perfil_wimax'];
     $cliente->cuenta_bancaria = $_POST['cuenta_bancaria'];
     $mensaje = $cliente->actualizar($id);
-    echo "<meta http-equiv='refresh' content='1; url=#save'>";
+    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_clientes'>";
 }
 
 

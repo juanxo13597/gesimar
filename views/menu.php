@@ -25,6 +25,14 @@
                 </div>
             </li>
 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Incidencias</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="?pag=ver_incidencias">Ver</a>
+                    <a class="dropdown-item" href="?pag=agregar_incidencias">Agregar</a>
+                </div>
+            </li>
+
         </ul>
         <?=$menuadmin?>
         <ul class="navbar-nav ml-aut mt-2 mt-lg-0">

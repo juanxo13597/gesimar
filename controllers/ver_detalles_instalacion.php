@@ -28,6 +28,7 @@ $mensaje = null;
 if(isset($_POST['guardar'])){
     $instalacion->cuota = $_POST['cuota'];
     $instalacion->activa = $_POST['activa'];
+    $instalacion->tipo_conexion = $_POST['tipo_conexion'];
 
     $mensaje = $instalacion->actualizar($id);
     echo "<meta http-equiv='refresh' content='1; url=?pag=ver_instalaciones'>";

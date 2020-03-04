@@ -20,6 +20,12 @@
             </div>
 
             <div class="form-group">
+                <label for="">Tipo Conexion</label>
+                <input type="text" class="form-control text-center" value="<?=$datos['tipo_conexion']?>" name="tipo_conexion"
+                    id="tipo_conexion" placeholder="..." disabled required>
+            </div>
+
+            <div class="form-group">
                 <label for="activa">Activa</label>
                 <select class="form-control" name="activa" id="activa" disabled>
                     <option value="<?=$datos['activa']?>">Actual: <?=$activa?></option>
@@ -54,6 +60,7 @@
             e.preventDefault();
             $("#cuota").removeAttr("disabled");
             $("#activa").removeAttr("disabled");
+            $("#tipo_conexion").removeAttr("disabled");
 
 
 

@@ -3,10 +3,13 @@
         <?=$mensaje?>
         <form action="" method="post">
             <div class="form-group">
-                <input type="text" name="cliente" class="form-control" placeholder="Cliente" id="cliente">
+                <input type="text" name="cliente" class="form-control" placeholder="Cliente" id="cliente" autocomplete="off">
             </div>
             <div class="form-group">
                 <input type="number" name="cuota" class="form-control" placeholder="Cuota €/MES">
+            </div>
+            <div class="form-group">
+                <input type="text" name="tipo_conexion" class="form-control" placeholder="Tipo Conexion">
             </div>
             <div class="form-group">
                     <label for="activa">Activa</label>

@@ -34,6 +34,7 @@ CREATE TABLE instalaciones(
     cliente         int(11) not null,
     cuota           int(255),
     activa          int(255) default 1,
+    tipo_conexion   varchar(255),
     T_creacion      datetime not null,
     T_actualizado   datetime default null,
 

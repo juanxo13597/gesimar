@@ -1,6 +1,6 @@
 <?php		
 	$keyword = strval($_POST['query']);
-	$search_param = "{$keyword}%";
+	$search_param = "%{$keyword}%";
 	$conn =new mysqli('localhost', 'root', '' , 'gesimar');
 
 	$sql = $conn->prepare("SELECT * FROM clientes WHERE nombre LIKE ?");

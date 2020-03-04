@@ -16,13 +16,13 @@
             <div class="form-group">
                 <label for="">Cuota</label>
                 <input type="number" class="form-control text-center" value="<?=$datos['cuota']?>" name="cuota"
-                    id="cuota" placeholder="..." disabled required>
+                    id="cuota" placeholder="..." disabled>
             </div>
 
             <div class="form-group">
                 <label for="">Tipo Conexion</label>
                 <input type="text" class="form-control text-center" value="<?=$datos['tipo_conexion']?>" name="tipo_conexion"
-                    id="tipo_conexion" placeholder="..." disabled required>
+                    id="tipo_conexion" placeholder="..." disabled>
             </div>
 
             <div class="form-group">

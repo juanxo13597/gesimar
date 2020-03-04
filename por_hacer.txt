@@ -1,0 +1,2 @@
+-crear apartado de incidencias con creador y ultimo que la actualizo.
+-agregar quien creó y quien fue el ultimo que actualizo -> cliente, instalacion e incidencias.

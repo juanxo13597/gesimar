@@ -32,6 +32,7 @@ class user extends database{
                 $_SESSION['login']['username'] = $row['username'];
                 $_SESSION['login']['role'] = $row['role'];
                 $_SESSION['login']['login'] = 1;
+                $_SESSION['login']['id'] = $row['id'];
 
                 $data = true;
             }

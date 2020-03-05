@@ -7,7 +7,6 @@ if(!empty($_POST['nombre'])){
         
     $cliente->dni = $_POST['dni'];
     $cliente->nombre = $_POST['nombre'];
-    $cliente->direccion = $_POST['direccion'];
     $cliente->telefono = $_POST['telefono'];
     $cliente->email = $_POST['email'];
     $cliente->cuenta_bancaria = $_POST['cuenta_bancaria'];

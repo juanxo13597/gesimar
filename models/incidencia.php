@@ -3,14 +3,13 @@ require_once("db.php");
 
 class incidencia extends database{
 
-    public $user_credor, $cliente, $nota, $activa, $T_creacion, $T_actualizado;
+    public $user_credor, $cliente, $nota, $activa = "1", $T_creacion, $T_actualizado;
 
     public function registrar(){
         $this->T_creacion = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO incidencias (user_creador, cliente, nota, 
-        activa, T_creacion) VALUES ('$this->user_creador', '$this->cliente', 
-        '$this->nota', '$this->T_creacion')";
+        $sql = "INSERT INTO incidencias (user_creador, cliente, nota, activa, T_creacion, instalacion) 
+        VALUES ('$this->user_creador', '$this->cliente', '$this->nota', '$this->activa', '$this->T_creacion', '$this->instalacion')";
         
         if($this->conexion->query($sql)){
             $result = "<div class='alert alert-success' role='alert'>
@@ -26,10 +25,22 @@ class incidencia extends database{
     
     }
 
+
     public function ver(){
         $sql = "SELECT *
-        FROM incidencias N, clientes C, instalaciones I
-        where N.cliente = C.id && N.instalacion = I.id";
+        FROM incidencias N, clientes C, instalaciones I";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+    public function buscar_id_direccion($direccion){
+        $sql = "select id from instalaciones where direccion = '$direccion'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+    public function buscar_id_cliente($nombre){
+        $sql = "select id from clientes where nombre = '$nombre'";
         $result = $this->conexion->query($sql);
         return $result;
     }

@@ -15,12 +15,6 @@
             </div>
 
             <div class="form-group">
-                <label for="">Direccion</label>
-                <input class="form-control text-center" value="<?=$datos['direccion']?>" name="direccion" id="direccion"
-                    placeholder="..." disabled>
-            </div>
-
-            <div class="form-group">
                 <label for="">Telefono</label>
                 <input class="form-control text-center" value="<?=$datos['telefono']?>" name="telefono" id="telefono"
                     placeholder="..." disabled required>

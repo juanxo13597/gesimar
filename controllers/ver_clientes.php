@@ -9,7 +9,6 @@ if($result->num_rows>0){
         $data[$j]['id'] = $row['id'];
         $data[$j]['dni'] = $row['dni'];
         $data[$j]['nombre'] = $row['nombre'];
-        $data[$j]['direccion'] = $row['direccion'];
         $data[$j]['telefono'] = $row['telefono'];
         $data[$j]['email'] = $row['email'];
 

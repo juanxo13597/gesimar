@@ -9,9 +9,6 @@
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre (Obligatorio)" required>
             </div>
             <div class="form-group">
-                <input type="text" name="direccion" class="form-control" placeholder="Direccion (Obligatorio)" required>
-            </div>
-            <div class="form-group">
                 <input type="text" name="telefono" class="form-control" placeholder="Telefono (Obligatorio)" required>
             </div>
             <div class="form-group">

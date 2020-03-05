@@ -3,7 +3,7 @@ require_once("db.php");
 
 class cliente extends database{
 
-    public $dni = null, $nombre, $direccion, $telefono, $email, $cuenta_bancaria, $perfil_wimax, $T_creacion, $T_actualizado;
+    public $dni = null, $nombre, $telefono, $email, $cuenta_bancaria, $perfil_wimax, $T_creacion, $T_actualizado;
 
     public function ver(){
         $sql = "select * from clientes";
@@ -24,11 +24,11 @@ class cliente extends database{
     }
 
     public function registrar(){
-        if(!is_null($this->nombre) && !is_null($this->telefono && !is_null($this->direccion))){
+        if(!is_null($this->nombre) && !is_null($this->telefono)){
             $this->T_creacion = date('Y-m-d H:i:s');
             $this->user_creador = $_SESSION['login']['id'];
-            $sql = "INSERT INTO clientes (dni, nombre, direccion, telefono, email, perfil_wimax, T_creacion, cuenta_bancaria, user_creador) 
-            VALUES ('$this->dni', '$this->nombre', '$this->direccion', '$this->telefono', 
+            $sql = "INSERT INTO clientes (dni, nombre, telefono, email, perfil_wimax, T_creacion, cuenta_bancaria, user_creador) 
+            VALUES ('$this->dni', '$this->nombre', '$this->telefono', 
             '$this->email', '$this->perfil_wimax', '$this->T_creacion', '$this->cuenta_bancaria', '$this->user_creador')";
 
             if($this->conexion->query($sql)){

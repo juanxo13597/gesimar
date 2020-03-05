@@ -20,7 +20,6 @@ CREATE TABLE clientes(
     user_creador    int(11) not null,
     dni             varchar(255) default null,
     nombre          varchar(255) not null,
-    direccion       varchar(255) default null,
     telefono        varchar(255) default null,
     email           varchar(255) default null,
     perfil_wimax    varchar(255) default null,
@@ -38,6 +37,7 @@ CREATE TABLE instalaciones(
     id              int(11) auto_increment,
     user_creador    int(11) not null,
     cliente         int(11) not null,
+    direccion       varchar(255) not null,
     cuota           int(255),
     activa          int(255) default 1,
     tipo_conexion   varchar(255),
@@ -62,7 +62,7 @@ CREATE TABLE incidencias(
 
 
     constraint pk_incidencias primary key(id),
-    constraint fk_incidencias_instalaciones foreign key (instalacion) references instalaciones(id),
     constraint fk_incidencias_users foreign key (user_creador) references users(id) on delete NO ACTION,
-    constraint fk_incidencias_clientes foreign key (cliente) references clientes(id)
+    constraint fk_incidencias_clientes foreign key (cliente) references clientes(id),
+    constraint fk_incidencias_instalacion foreign key (instalacion) references instalaciones(id)
 )ENGINE=INNODB;

@@ -3,7 +3,7 @@
             <tr>
                 <th>id</th>
                 <th>Cliente</th>
-                <th>nota</th>
+                <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Activa</th>
             </tr>
@@ -20,7 +20,7 @@
                 echo "<tr>";
                 echo "<td>".$data[$j]['id']."</td>";
                 echo "<td><a href='?pag=ver_detalles_incidencia&&id=".$data[$j]['id']."'>".$data[$j]['nombre']."</a></td>";
-                echo "<td>".$data[$j]['nota']."</td>";
+                echo "<td>".$data[$j]['direccion']."</td>";
                 echo "<td>".$data[$j]['telefono']."</td>";
                 echo "<td>".$activa."</td>";
                 echo "</tr>";

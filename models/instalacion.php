@@ -3,7 +3,7 @@ require_once("db.php");
 
 class instalacion extends database{
 
-    public $cliente,$cuota,$activa = '1', $tipo_conexion, $T_creacion, $T_actualizado, $user_creador;
+    public $cliente,$cuota,$activa = '1', $tipo_conexion, $direccion, $T_creacion, $T_actualizado, $user_creador;
 
     public function registrar(){
         $sql = "select * from clientes where nombre = '$this->cliente'";
@@ -14,8 +14,8 @@ class instalacion extends database{
         $cliente = $row['id'];
         $this->T_creacion = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO instalaciones (cliente, cuota, activa, tipo_conexion, T_creacion, user_creador) 
-        VALUES ('$cliente', '$this->cuota', '$this->activa', '$this->tipo_conexion', '$this->T_creacion', '$this->user_creador')";
+        $sql = "INSERT INTO instalaciones (cliente, cuota, direccion, activa, tipo_conexion, T_creacion, user_creador) 
+        VALUES ('$cliente', '$this->cuota', '$this->direccion', '$this->activa', '$this->tipo_conexion', '$this->T_creacion', '$this->user_creador')";
         
         if($this->conexion->query($sql)){
             $result = "<div class='alert alert-success' role='alert'>

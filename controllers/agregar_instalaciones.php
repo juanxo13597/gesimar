@@ -7,6 +7,7 @@ if(isset($_POST['guardar'])){
     $instalacion->cliente = $_POST['cliente'];
     $instalacion->cuota = $_POST['cuota'];
     $instalacion->activa = $_POST['activa'];
+    $instalacion->user_creador = $_SESSION['login']['id'];
     $instalacion->tipo_conexion = $_POST['tipo_conexion'];
 
     $mensaje = $instalacion->registrar();

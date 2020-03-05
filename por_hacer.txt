@@ -1,2 +1,4 @@
 -crear apartado de incidencias con creador y ultimo que la actualizo.
 -agregar quien creó y quien fue el ultimo que actualizo -> cliente, instalacion e incidencias.
+-agregar en ver detalles cliente el numero y fecha de cada incidencia
+-cambiar direccion de cliente a direccion de instalacion

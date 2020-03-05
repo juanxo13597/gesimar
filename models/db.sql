@@ -54,12 +54,15 @@ CREATE TABLE incidencias(
     id              int(11) auto_increment,
     user_creador    int(11) not null,
     cliente         int(11) not null,
+    instalacion     int(11) not null,
     nota            text,
+    activa          int(11) default 1,
     T_creacion      datetime not null,
     T_actualizado   datetime default null,
 
 
     constraint pk_incidencias primary key(id),
+    constraint fk_incidencias_instalaciones foreign key (instalacion) references instalaciones(id),
     constraint fk_incidencias_users foreign key (user_creador) references users(id) on delete NO ACTION,
     constraint fk_incidencias_clientes foreign key (cliente) references clientes(id)
 )ENGINE=INNODB;

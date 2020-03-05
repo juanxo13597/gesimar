@@ -26,6 +26,7 @@ class incidencia extends database{
     }
 
 
+
     public function ver(){
         $sql = "SELECT *
         FROM incidencias N, clientes C, instalaciones I";
@@ -46,7 +47,7 @@ class incidencia extends database{
     }
 
     public function ver_detalles($id){
-        $sql = "select * from clientes C, instalaciones I where I.id='$id'";
+        $sql = "select * from incidencias I where I.id='$id'";
         $result = $this->conexion->query($sql);
         return $result;
     }

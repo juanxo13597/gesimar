@@ -29,7 +29,7 @@ class incidencia extends database{
 
     public function ver(){
         $sql = "SELECT *
-        FROM incidencias N, clientes C, instalaciones I";
+        FROM incidencias";
         $result = $this->conexion->query($sql);
         return $result;
     }

@@ -22,7 +22,6 @@ CREATE TABLE clientes(
     nombre          varchar(255) not null,
     telefono        varchar(255) default null,
     email           varchar(255) default null,
-    perfil_wimax    varchar(255) default null,
     cuenta_bancaria varchar(255) default null,
     T_creacion      datetime not null,
     T_actualizado   datetime default null,
@@ -41,6 +40,7 @@ CREATE TABLE instalaciones(
     cuota           int(255),
     activa          int(255) default 1,
     tipo_conexion   varchar(255),
+    perfil_wimax    varchar(255) default null,
     T_creacion      datetime not null,
     T_actualizado   datetime default null,
 

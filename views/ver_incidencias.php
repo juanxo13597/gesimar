@@ -19,9 +19,9 @@
 
                 echo "<tr>";
                 echo "<td>".$data[$j]['id']."</td>";
-                echo "<td><a href='?pag=ver_detalles_incidencia&&id=".$data[$j]['id']."'>".$data[$j]['nombre']."</a></td>";
-                echo "<td>".$data[$j]['direccion']."</td>";
-                echo "<td>".$data[$j]['telefono']."</td>";
+                echo "<td><a href='?pag=ver_detalles_incidencia&&id=".$data[$j]['id']."'>".$datos_cliente[$j]['nombre']."</a></td>";
+                echo "<td>".$datos_instalacion[$j]['direccion']."</td>";
+                echo "<td>".$datos_cliente[$j]['telefono']."</td>";
                 echo "<td>".$activa."</td>";
                 echo "</tr>";
             }
@@ -33,6 +33,7 @@
     <script>
         $(document).ready(function() {
   $('#ver_incidencias').DataTable({
+    "order": [[4, "asc"], [0, "asc"]],
     "language": {
       "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
     }

@@ -27,9 +27,9 @@ class incidencia extends database{
 
 
 
+
     public function ver(){
-        $sql = "SELECT *
-        FROM incidencias";
+        $sql = "select * FROM incidencias";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -40,6 +40,19 @@ class incidencia extends database{
         return $result;
     }
 
+    public function datos_cliente($id){
+        $sql = "select * FROM clientes where id='$id'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+    public function datos_instalacion($id){
+        $sql = "select * FROM instalaciones where id='$id'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
+
     public function buscar_id_cliente($nombre){
         $sql = "select id from clientes where nombre = '$nombre'";
         $result = $this->conexion->query($sql);
@@ -47,7 +60,7 @@ class incidencia extends database{
     }
 
     public function ver_detalles($id){
-        $sql = "select * from incidencias I where I.id='$id'";
+        $sql = "select * from incidencias where id='$id'";
         $result = $this->conexion->query($sql);
         return $result;
     }
@@ -55,13 +68,11 @@ class incidencia extends database{
 
     public function actualizar($id){
         $this->T_actualizado = date('Y-m-d H:i:s');
-        $sql = "UPDATE instalaciones SET cuota='$this->cuota',
-        activa='$this->activa', T_actualizado = '$this->T_actualizado', tipo_conexion = '$this->tipo_conexion'
-        WHERE id=$id";
+        $sql = "UPDATE incidencias SET nota='$this->nota', activa='$this->activa', T_actualizado = '$this->T_actualizado' WHERE id=$id";
 
         if($this->conexion->query($sql)){
             $result = "<div class='alert alert-success' role='alert'>
-            Instalacion Guardada Correctamente.
+            Incidencia Guardada Correctamente.
         </div>";
         }else{
             $result = "<div class='alert alert-danger' role='alert'>

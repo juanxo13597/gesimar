@@ -33,6 +33,7 @@
     <script>
         $(document).ready(function() {
   $('#ver_instalaciones').DataTable({
+    "order": [[4, "asc"], [0, "asc"]],
     "language": {
       "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
     }

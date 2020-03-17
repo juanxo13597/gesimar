@@ -4,25 +4,31 @@
             <?=$mensaje?>
             <div class="form-group">
                 <label for="">Cliente</label>
-                    <p><a href="?pag=ver_detalles_cliente&&id=<?=$datoscliente['id']?>"><?=$datos['nombre']?></a></p>
+                    <p><a href="?pag=ver_detalles_cliente&&id=<?=$datos_cliente['id']?>"><?=$datos_cliente['nombre']?></a></p>
             </div>
 
             <div class="form-group">
                 <label for="">Direccion</label>
-                <input class="form-control text-center" value="<?=$datos['direccion']?>" name="direccion" id="direccion"
+                <input class="form-control text-center" value="<?=$datos_instalacion['direccion']?>" name="direccion" id="direccion"
                     placeholder="..." disabled required>
             </div>
 
             <div class="form-group">
                 <label for="">Cuota</label>
-                <input type="number" class="form-control text-center" value="<?=$datos['cuota']?>" name="cuota"
+                <input type="number" class="form-control text-center" value="<?=$datos_instalacion['cuota']?>" name="cuota"
                     id="cuota" placeholder="..." disabled>
             </div>
 
             <div class="form-group">
                 <label for="">Tipo Conexion</label>
-                <input type="text" class="form-control text-center" value="<?=$datos['tipo_conexion']?>" name="tipo_conexion"
+                <input type="text" class="form-control text-center" value="<?=$datos_instalacion['tipo_conexion']?>" name="tipo_conexion"
                     id="tipo_conexion" placeholder="..." disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="">Nota</label>
+                <textarea type="text" class="form-control text-center" name="nota"
+                    id="nota" placeholder="..." disabled><?=$datos['nota']?></textarea>
             </div>
 
             <div class="form-group">
@@ -58,10 +64,8 @@
 
         $("#editar").click(function (e) {
             e.preventDefault();
-            $("#cuota").removeAttr("disabled");
             $("#activa").removeAttr("disabled");
-            $("#tipo_conexion").removeAttr("disabled");
-
+            $("#nota").removeAttr("disabled");
 
 
             $("#guardar").removeAttr("hidden");

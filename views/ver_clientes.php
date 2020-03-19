@@ -23,6 +23,7 @@
     <script>
         $(document).ready(function() {
   $('#ver_clientes').DataTable({
+    "order": [[0, "desc"]],
     "language": {
       "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
     }

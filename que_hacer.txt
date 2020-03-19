@@ -1,0 +1,1 @@
+-agregar en ver cliente las instalaciones que tiene.

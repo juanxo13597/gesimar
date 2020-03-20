@@ -52,6 +52,7 @@
     <?=$actualizacion?>
     </div>
 
+    <?php if($ins_cli_result->num_rows!=0){?>
     <div class="col-md-4 border border-primary">
     <h3>Instalaciones</h3>
         <?php
@@ -65,8 +66,11 @@
                 echo $num.". <a href='?pag=ver_detalles_instalacion&&id=".$row['id']."'>".$row['direccion']."</a> ".$activa."<br>";
                 $num++;
             }
+            echo "</div>";
+    }
+    
         ?>
-    </div>
+    
     
 
 </center>

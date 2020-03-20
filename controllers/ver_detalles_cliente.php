@@ -5,7 +5,10 @@ $cliente = new cliente;
 $instalacion = new instalacion;
 $id = $_GET['id'];
 $result = $cliente->ver_detalles($id);
-
+if($result->num_rows==0){
+    header("location:?pag=error404");
+    die();
+}
 if($result->num_rows>0){
     $datos = $result->fetch_assoc();
 }

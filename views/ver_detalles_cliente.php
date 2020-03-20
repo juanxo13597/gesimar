@@ -51,6 +51,22 @@
     <?=$creacion?>
     <?=$actualizacion?>
     </div>
+
+    <div class="col-md-4 border border-primary">
+    <h3>Instalaciones</h3>
+        <?php
+        $num = 1;
+            while($row = $ins_cli_result->fetch_assoc()){
+                if($row['activa']=='1'){
+                    $activa = "<activa class='text-success'>Activa</activa>";
+                }else{
+                    $activa = "<activa class='text-danger'>Inactiva</activa>";
+                }
+                echo $num.". <a href='?pag=ver_detalles_instalacion&&id=".$row['id']."'>".$row['direccion']."</a> ".$activa."<br>";
+                $num++;
+            }
+        ?>
+    </div>
     
 
 </center>

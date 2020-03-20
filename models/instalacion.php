@@ -31,6 +31,14 @@ class instalacion extends database{
     
     }
 
+    public function ver_instalaciones_del_cliente($id){
+        $sql = "SELECT *
+        FROM clientes C, instalaciones I
+        where i.cliente = C.id && c.id ='$id'";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function ver(){
         $sql = "SELECT *
         FROM clientes C, instalaciones I
@@ -40,7 +48,7 @@ class instalacion extends database{
     }
 
     public function ver_detalles($id){
-        $sql = "select * from clientes C, instalaciones I where I.id='$id'";
+        $sql = "select * from clientes C, instalaciones I where I.id='$id' && I.cliente = C.id";
         $result = $this->conexion->query($sql);
         return $result;
     }

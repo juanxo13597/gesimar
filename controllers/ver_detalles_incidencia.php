@@ -31,7 +31,7 @@ if(isset($_POST['guardar'])){
     $incidencia->nota = $_POST['nota'];
 
     $mensaje = $incidencia->actualizar($id);
-    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_incidencias'>";
+    echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
 

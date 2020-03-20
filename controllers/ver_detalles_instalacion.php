@@ -31,7 +31,7 @@ if(isset($_POST['guardar'])){
     $instalacion->tipo_conexion = $_POST['tipo_conexion'];
 
     $mensaje = $instalacion->actualizar($id);
-    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_instalaciones'>";
+    echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
 if($datos['activa']=='1'){

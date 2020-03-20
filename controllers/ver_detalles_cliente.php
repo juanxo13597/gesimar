@@ -1,6 +1,8 @@
 <?php
 require_once("models/clientes.php");
+require_once("models/instalacion.php");
 $cliente = new cliente;
+$instalacion = new instalacion;
 $id = $_GET['id'];
 $result = $cliente->ver_detalles($id);
 
@@ -24,8 +26,10 @@ if(isset($_POST['guardar'])){
     $cliente->perfil_wimax = $_POST['perfil_wimax'];
     $cliente->cuenta_bancaria = $_POST['cuenta_bancaria'];
     $mensaje = $cliente->actualizar($id);
-    echo "<meta http-equiv='refresh' content='1; url=?pag=ver_clientes'>";
+    echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
+
+$ins_cli_result = $instalacion->ver_instalaciones_del_cliente($id);
 
 
 

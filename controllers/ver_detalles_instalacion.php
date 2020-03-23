@@ -11,6 +11,9 @@ if($result->num_rows==0){
     die();
 }
 
+$datos_incidencia = $instalacion->ver_incidencias_de_instalacion($id);
+
+
 if($result->num_rows>0){
     $datos = $result->fetch_assoc();
 }

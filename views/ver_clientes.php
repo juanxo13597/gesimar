@@ -24,6 +24,7 @@
         $(document).ready(function() {
   $('#ver_clientes').DataTable({
     "order": [[0, "desc"]],
+    "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "Ver Todo"]],
     "language": {
       "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
     }

@@ -51,6 +51,29 @@
     </div>
 
 
+    <?php if($datos_incidencia->num_rows!=0){?>
+    <div class="col-md-4 border border-primary">
+    <h3>Incidencias</h3>
+        <?php
+        $num = 1;
+            while($row = $datos_incidencia->fetch_assoc()){
+                if($row['activa']=='1'){
+                    $activa = "<activa class='text-success'>Activa</activa>";
+                }else{
+                    $activa = "<activa class='text-danger'>Inactiva</activa>";
+                }
+                echo $num.". <a href='?pag=ver_detalles_incidencia&&id=".$row['id']."'>".$row['direccion']."</a> ".$activa." ~ ".$row['T_creacion']."<br>";
+                $num++;
+
+            }
+            echo "</div>";
+
+            
+    }
+    
+        ?>
+
+
 </center>
 
 <script>

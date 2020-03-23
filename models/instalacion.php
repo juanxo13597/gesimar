@@ -31,6 +31,19 @@ class instalacion extends database{
     
     }
 
+    public function formato_fecha($fecha){
+        $fecha_cambiada = date_format($fecha, 'H:i:s - d-m-Y');
+        return $fecha_cambiada;
+    }
+
+    public function ver_incidencias_de_instalacion($id){
+        $sql = "SELECT N.id, N.activa, I.direccion, N.T_creacion
+        FROM incidencias N, instalaciones I
+        where N.instalacion = '$id' && N.instalacion = I.id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function ver_instalaciones_del_cliente($id){
         $sql = "SELECT *
         FROM clientes C, instalaciones I

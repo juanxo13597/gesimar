@@ -53,7 +53,7 @@
     </div>
 
     <?php if($ins_cli_result->num_rows!=0){?>
-    <div class="col-md-4 border border-primary">
+    <div class="col-md-6 border border-primary">
     <h3>Instalaciones</h3>
         <?php
         $num = 1;

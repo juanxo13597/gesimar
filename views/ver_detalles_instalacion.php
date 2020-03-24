@@ -52,7 +52,7 @@
 
 
     <?php if($datos_incidencia->num_rows!=0){?>
-    <div class="col-md-4 border border-primary">
+    <div class="col-md-6 border border-primary">
     <h3>Incidencias</h3>
         <?php
         $num = 1;

@@ -23,7 +23,6 @@ $mensaje = null;
 if(isset($_POST['guardar'])){
     $cliente->dni = $_POST['dni'];
     $cliente->nombre = $_POST['nombre'];
-    $cliente->direccion = $_POST['direccion'];
     $cliente->telefono = $_POST['telefono'];
     $cliente->email = $_POST['email'];
     $cliente->perfil_wimax = $_POST['perfil_wimax'];

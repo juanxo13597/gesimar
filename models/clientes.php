@@ -52,7 +52,7 @@ class cliente extends database{
     public function actualizar($id){
         $this->T_actualizado = date('Y-m-d H:i:s');
         $sql = "UPDATE clientes SET dni='$this->dni', nombre='$this->nombre',
-        direccion='$this->direccion', telefono='$this->telefono',
+        telefono='$this->telefono',
         email='$this->email', perfil_wimax='$this->perfil_wimax', T_actualizado='$this->T_actualizado'
         WHERE id=$id";
 

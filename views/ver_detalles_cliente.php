@@ -70,14 +70,22 @@
     }
     
         ?>
+    <div class="mt-3">
+    <button id="creador" class="btn btn-sm btn-info">Ver Creador</button>
+    <small id="creado" hidden="hidden">Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
+    </div>
     
-    
-
 </center>
 
 <script>
 
 $(document).ready(function () {
+
+    $("#creador").click(function (e) { 
+        e.preventDefault();
+        $("#creado").removeAttr("hidden");    
+        $("#creador").attr("hidden", "true");    
+    });
 
     $("#editar").click(function (e) { 
         e.preventDefault();

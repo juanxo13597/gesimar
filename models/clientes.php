@@ -17,6 +17,15 @@ class cliente extends database{
         return $result;
     }
 
+    public function ver_creador($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN clientes
+        ON users.id = clientes.user_creador && clientes.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function buscar_por_nombre($nombre){
         $sql = "select * from clientes where nombre='$nombre'";
         $result = $this->conexion->query($sql);

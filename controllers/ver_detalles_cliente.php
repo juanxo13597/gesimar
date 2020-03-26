@@ -33,6 +33,8 @@ if(isset($_POST['guardar'])){
 
 $ins_cli_result = $instalacion->ver_instalaciones_del_cliente($id);
 
+$ver_creador_result = $cliente->ver_creador($id);
+$ver_creador = $ver_creador_result->fetch_assoc();
 
 
 

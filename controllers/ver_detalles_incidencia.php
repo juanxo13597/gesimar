@@ -37,6 +37,9 @@ if(isset($_POST['guardar'])){
     echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
+$ver_creador_result = $incidencia->ver_creador($id);
+$ver_creador = $ver_creador_result->fetch_assoc();
+
 
 
 

@@ -46,6 +46,9 @@ if($datos['activa']=='1'){
     $activa = "No";
 }
 
+$ver_creador_result = $instalacion->ver_creador($id);
+$ver_creador = $ver_creador_result->fetch_assoc();
+
 
 
 

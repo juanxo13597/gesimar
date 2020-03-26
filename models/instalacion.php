@@ -31,6 +31,15 @@ class instalacion extends database{
     
     }
 
+    public function ver_creador($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN instalaciones
+        ON users.id = instalaciones.user_creador && instalaciones.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     
 
     public function ver_incidencias_de_instalacion($id){

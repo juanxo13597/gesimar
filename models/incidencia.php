@@ -25,6 +25,15 @@ class incidencia extends database{
     
     }
 
+    public function ver_creador($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN incidencias
+        ON users.id = incidencias.user_creador && incidencias.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
 
 
 

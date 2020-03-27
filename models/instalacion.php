@@ -72,11 +72,21 @@ class instalacion extends database{
         return $result;
     }
 
+    public function ver_updater($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN instalaciones
+        ON users.id = instalaciones.user_updater && instalaciones.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
 
-    public function actualizar($id){
+
+    public function actualizar($id,  $id_actualizador){
         $this->T_actualizado = date('Y-m-d H:i:s');
         $sql = "UPDATE instalaciones SET cuota='$this->cuota',
-        activa='$this->activa', T_actualizado = '$this->T_actualizado', tipo_conexion = '$this->tipo_conexion'
+        activa='$this->activa', T_actualizado = '$this->T_actualizado',
+        user_updater='$id_actualizador', tipo_conexion = '$this->tipo_conexion'
         WHERE id=$id";
 
         if($this->conexion->query($sql)){

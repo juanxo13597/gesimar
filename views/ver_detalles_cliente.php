@@ -28,14 +28,14 @@
 
             <div class="form-group">
                 <label for="">Perfil Wimax</label>
-                <input class="form-control text-center" value="<?=$datos['perfil_wimax']?>" name="perfil_wimax" id="perfil_wimax"
-                    placeholder="..." disabled>
+                <input class="form-control text-center" value="<?=$datos['perfil_wimax']?>" name="perfil_wimax"
+                    id="perfil_wimax" placeholder="..." disabled>
             </div>
 
             <div class="form-group">
                 <label for="">Cuenta Bancaria</label>
-                <input class="form-control text-center" value="<?=$datos['cuenta_bancaria']?>" name="cuenta_bancaria" id="cuenta_bancaria"
-                    placeholder="..." disabled>
+                <input class="form-control text-center" value="<?=$datos['cuenta_bancaria']?>" name="cuenta_bancaria"
+                    id="cuenta_bancaria" placeholder="..." disabled>
             </div>
 
 
@@ -43,18 +43,18 @@
             <button type="submit" class="btn btn-primary" id="guardar" name="guardar" hidden>Guardar</button>
         </form>
 
-        <button class="btn btn-outline-primary" id="editar" >Editar</button>
-        
+        <button class="btn btn-outline-primary" id="editar">Editar</button>
+
 
     </div>
     <div class="mt-4">
-    <?=$creacion?>
-    <?=$actualizacion?>
+        <?=$creacion?>
+        <?=$actualizacion?>
     </div>
 
     <?php if($ins_cli_result->num_rows!=0){?>
     <div class="col-md-6 border border-primary">
-    <h3>Instalaciones</h3>
+        <h3>Instalaciones</h3>
         <?php
         $num = 1;
             while($row = $ins_cli_result->fetch_assoc()){
@@ -70,41 +70,47 @@
     }
     
         ?>
-    <div class="mt-3">
-    <button id="creador" class="btn btn-sm btn-info">Ver Creador</button>
-    <small id="creado" hidden="hidden">Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
-    </div>
-    
+        <div class="mt-3">
+            <button id="creador" class="btn btn-sm btn-info">Ver Información</button>
+            <div id="creado" hidden="hidden">
+                <small>Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
+                <?php
+                    if($ver_updater){
+                        echo "<br><small>Ultima actualizacion por: <creador class='text-danger'>".$ver_creador['username']."</creador></small>";
+                    }
+                ?>
+            </div>
+
+        </div>
+
 </center>
 
 <script>
+    $(document).ready(function () {
 
-$(document).ready(function () {
+        $("#creador").click(function (e) {
+            e.preventDefault();
+            $("#creado").removeAttr("hidden");
+            $("#creador").attr("hidden", "true");
+        });
 
-    $("#creador").click(function (e) { 
-        e.preventDefault();
-        $("#creado").removeAttr("hidden");    
-        $("#creador").attr("hidden", "true");    
+        $("#editar").click(function (e) {
+            e.preventDefault();
+            $("#dni").removeAttr("disabled");
+            $("#nombre").removeAttr("disabled");
+            $("#direccion").removeAttr("disabled");
+            $("#telefono").removeAttr("disabled");
+            $("#email").removeAttr("disabled");
+            $("#perfil_wimax").removeAttr("disabled");
+            $("#cuenta_bancaria").removeAttr("disabled");
+
+
+            $("#guardar").removeAttr("hidden");
+            $("#editar").attr("hidden", "true");
+
+        });
+
+
+
     });
-
-    $("#editar").click(function (e) { 
-        e.preventDefault();
-        $("#dni").removeAttr("disabled");
-        $("#nombre").removeAttr("disabled");
-        $("#direccion").removeAttr("disabled");
-        $("#telefono").removeAttr("disabled");
-        $("#email").removeAttr("disabled");
-        $("#perfil_wimax").removeAttr("disabled");
-        $("#cuenta_bancaria").removeAttr("disabled");
-
-        
-        $("#guardar").removeAttr("hidden");
-        $("#editar").attr("hidden", "true");
-
-    });
-
-
-
-});
-
 </script>

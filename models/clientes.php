@@ -26,6 +26,15 @@ class cliente extends database{
         return $result;
     }
 
+    public function ver_updater($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN clientes
+        ON users.id = clientes.user_updater && clientes.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function buscar_por_nombre($nombre){
         $sql = "select * from clientes where nombre='$nombre'";
         $result = $this->conexion->query($sql);
@@ -58,10 +67,10 @@ class cliente extends database{
         return $result;
     }
 
-    public function actualizar($id){
+    public function actualizar($id, $id_actualizador){
         $this->T_actualizado = date('Y-m-d H:i:s');
         $sql = "UPDATE clientes SET dni='$this->dni', nombre='$this->nombre',
-        telefono='$this->telefono',
+        telefono='$this->telefono', user_updater='$id_actualizador',
         email='$this->email', perfil_wimax='$this->perfil_wimax', T_actualizado='$this->T_actualizado'
         WHERE id=$id";
 

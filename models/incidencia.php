@@ -34,6 +34,15 @@ class incidencia extends database{
         return $result;
     }
 
+    public function ver_updater($id){
+        $sql = "SELECT username, role
+        FROM users
+        INNER JOIN incidencias
+        ON users.id = incidencias.user_updater && incidencias.id = $id";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
 
 
 
@@ -75,9 +84,12 @@ class incidencia extends database{
     }
 
 
-    public function actualizar($id){
+    public function actualizar($id, $id_actualizador){
         $this->T_actualizado = date('Y-m-d H:i:s');
-        $sql = "UPDATE incidencias SET nota='$this->nota', activa='$this->activa', T_actualizado = '$this->T_actualizado' WHERE id=$id";
+        $sql = "UPDATE incidencias SET nota='$this->nota', 
+        activa='$this->activa', T_actualizado = '$this->T_actualizado',
+        user_updater='$id_actualizador'
+        WHERE id=$id";
 
         if($this->conexion->query($sql)){
             $result = "<div class='alert alert-success' role='alert'>

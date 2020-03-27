@@ -4,7 +4,7 @@
             <?=$mensaje?>
             <div class="form-group">
                 <label for="">Cliente</label>
-                    <p><a href="?pag=ver_detalles_cliente&&id=<?=$datoscliente['id']?>"><?=$datos['nombre']?></a></p>
+                <p><a href="?pag=ver_detalles_cliente&&id=<?=$datoscliente['id']?>"><?=$datos['nombre']?></a></p>
             </div>
 
             <div class="form-group">
@@ -21,8 +21,8 @@
 
             <div class="form-group">
                 <label for="">Tipo Conexion</label>
-                <input type="text" class="form-control text-center" value="<?=$datos['tipo_conexion']?>" name="tipo_conexion"
-                    id="tipo_conexion" placeholder="..." disabled>
+                <input type="text" class="form-control text-center" value="<?=$datos['tipo_conexion']?>"
+                    name="tipo_conexion" id="tipo_conexion" placeholder="..." disabled>
             </div>
 
             <div class="form-group">
@@ -53,7 +53,7 @@
 
     <?php if($datos_incidencia->num_rows!=0){?>
     <div class="col-md-6 border border-primary">
-    <h3>Incidencias</h3>
+        <h3>Incidencias</h3>
         <?php
         $num = 1;
             while($row = $datos_incidencia->fetch_assoc()){
@@ -73,20 +73,28 @@
     
         ?>
 
-<div class="mt-3">
-    <button id="creador" class="btn btn-sm btn-info">Ver Creador</button>
-    <small id="creado" hidden="hidden">Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
-    </div>
+        <div class="mt-3">
+            <button id="creador" class="btn btn-sm btn-info">Ver Información</button>
+            <div id="creado" hidden="hidden">
+                <small>Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
+                <?php
+                    if($ver_updater){
+                        echo "<br><small>Ultima actualizacion por: <creador class='text-danger'>".$ver_creador['username']."</creador></small>";
+                    }
+                ?>
+            </div>
+
+        </div>
 
 </center>
 
 <script>
     $(document).ready(function () {
 
-        $("#creador").click(function (e) { 
+        $("#creador").click(function (e) {
             e.preventDefault();
-            $("#creado").removeAttr("hidden");    
-            $("#creador").attr("hidden", "true");    
+            $("#creado").removeAttr("hidden");
+            $("#creador").attr("hidden", "true");
         });
 
         $("#editar").click(function (e) {

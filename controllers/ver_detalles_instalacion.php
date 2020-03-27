@@ -36,7 +36,7 @@ if(isset($_POST['guardar'])){
     $instalacion->activa = $_POST['activa'];
     $instalacion->tipo_conexion = $_POST['tipo_conexion'];
 
-    $mensaje = $instalacion->actualizar($id);
+    $mensaje = $instalacion->actualizar($id, $_SESSION['login']['id']);
     echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
@@ -49,6 +49,8 @@ if($datos['activa']=='1'){
 $ver_creador_result = $instalacion->ver_creador($id);
 $ver_creador = $ver_creador_result->fetch_assoc();
 
+$ver_updater_result = $instalacion->ver_updater($id);
+$ver_updater = $ver_updater_result->fetch_assoc();
 
 
 

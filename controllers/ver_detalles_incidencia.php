@@ -33,12 +33,16 @@ if(isset($_POST['guardar'])){
     $incidencia->activa = $_POST['activa'];
     $incidencia->nota = $_POST['nota'];
 
-    $mensaje = $incidencia->actualizar($id);
+    $mensaje = $incidencia->actualizar($id, $_SESSION['login']['id']);
     echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
 $ver_creador_result = $incidencia->ver_creador($id);
 $ver_creador = $ver_creador_result->fetch_assoc();
+
+$ver_updater_result = $incidencia->ver_updater($id);
+$ver_updater = $ver_updater_result->fetch_assoc();
+
 
 
 

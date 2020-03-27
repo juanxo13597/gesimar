@@ -1,1 +1,2 @@
 -agregar en base de datos columna del ultimo en actualizar, cliente, instalacion e incidencia y monstrarlo en boton como el creador
+-agregar en el index informacion de clientes, instalaciones e incidencias

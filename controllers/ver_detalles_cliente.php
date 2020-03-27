@@ -27,7 +27,7 @@ if(isset($_POST['guardar'])){
     $cliente->email = $_POST['email'];
     $cliente->perfil_wimax = $_POST['perfil_wimax'];
     $cliente->cuenta_bancaria = $_POST['cuenta_bancaria'];
-    $mensaje = $cliente->actualizar($id);
+    $mensaje = $cliente->actualizar($id, $_SESSION['login']['id']);
     echo "<meta http-equiv='refresh' content='1; url=#'>";
 }
 
@@ -35,6 +35,10 @@ $ins_cli_result = $instalacion->ver_instalaciones_del_cliente($id);
 
 $ver_creador_result = $cliente->ver_creador($id);
 $ver_creador = $ver_creador_result->fetch_assoc();
+
+$ver_updater_result = $cliente->ver_updater($id);
+$ver_updater = $ver_updater_result->fetch_assoc();
+
 
 
 

@@ -47,7 +47,6 @@ class user extends database{
     }
 
     public function logout(){
-        session_start();
         session_destroy();
     }
 

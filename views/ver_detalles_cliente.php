@@ -53,7 +53,7 @@
     </div>
 
     <?php if($ins_cli_result->num_rows!=0){?>
-    <div class="col-md-6 border border-primary">
+    <div class="col-md-8 border border-primary">
         <h3>Instalaciones</h3>
         <?php
         $num = 1;
@@ -71,7 +71,12 @@
     
         ?>
         <div class="mt-3">
-            <button id="creador" class="btn btn-sm btn-info">Ver Información</button>
+            
+            <?php
+                if($_SESSION['login']['role'] == "ADMIN"){
+                    echo "<button id='creador' class='btn btn-sm btn-info'>Ver Información</button>";
+                }
+            ?>
             <div id="creado" hidden="hidden">
                 <small>Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
                 <?php

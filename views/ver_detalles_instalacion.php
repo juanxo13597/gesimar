@@ -74,7 +74,11 @@
         ?>
 
         <div class="mt-3">
-            <button id="creador" class="btn btn-sm btn-info">Ver Información</button>
+            <?php
+                if($_SESSION['login']['role'] == "ADMIN"){
+                    echo "<button id='creador' class='btn btn-sm btn-info'>Ver Información</button>";
+                 }
+            ?>
             <div id="creado" hidden="hidden">
                 <small>Cliente creado por: <creador class="text-danger"><?=$ver_creador['username']?></creador></small>
                 <?php

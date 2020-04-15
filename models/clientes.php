@@ -5,6 +5,12 @@ class cliente extends database{
 
     public $dni = null, $nombre, $telefono, $email, $cuenta_bancaria, $perfil_wimax, $T_creacion, $T_actualizado;
 
+    public function total_clientes(){
+        $sql = "SELECT COUNT(*) as 'total' FROM clientes";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function ver(){
         $sql = "select * from clientes";
         $result = $this->conexion->query($sql);

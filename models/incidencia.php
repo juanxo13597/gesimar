@@ -25,6 +25,16 @@ class incidencia extends database{
     
     }
 
+    public function total_incidencias(){
+        $sql = "SELECT
+        COUNT(*) AS total,
+        COUNT(CASE WHEN activa=1 THEN 1 END) AS activas,
+        COUNT(CASE WHEN activa=0 THEN 1 END) AS inactivas
+        FROM incidencias";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function ver_creador($id){
         $sql = "SELECT username, role
         FROM users

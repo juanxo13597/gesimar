@@ -5,6 +5,16 @@ class instalacion extends database{
 
     public $cliente,$cuota,$activa = '1', $tipo_conexion, $direccion, $T_creacion, $T_actualizado, $user_creador;
 
+    public function total_instalaciones(){
+        $sql = "SELECT
+        COUNT(*) AS total,
+        COUNT(CASE WHEN activa=1 THEN 1 END) AS activas,
+        COUNT(CASE WHEN activa=0 THEN 1 END) AS inactivas
+        FROM instalaciones";
+        $result = $this->conexion->query($sql);
+        return $result;
+    }
+
     public function registrar(){
         $sql = "select * from clientes where nombre = '$this->cliente'";
         $resultado = $this->conexion->query($sql);

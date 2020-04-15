@@ -1,2 +1,1 @@
--agregar en el index informacion de clientes, instalaciones e incidencias
 -agregar funcion de boton ver informacion solo para admines
